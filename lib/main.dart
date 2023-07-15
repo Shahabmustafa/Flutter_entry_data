@@ -26,9 +26,9 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
         ),
         textTheme: TextTheme(
-          titleLarge: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),
-          titleMedium: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),
-          titleSmall: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),
+          titleLarge: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),
+          titleMedium: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: Colors.white),
+          titleSmall: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: Colors.black),
         )
       ),
       home: LoginScreen(),

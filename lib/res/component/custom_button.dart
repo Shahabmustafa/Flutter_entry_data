@@ -4,13 +4,14 @@ import 'package:flutter_entry_data/res/color.dart';
 
 class CustomButton extends StatelessWidget {
   String title;
-  VoidCallback? onTap;
-  CustomButton({Key? key,required this.title,this.onTap}) : super(key: key);
+  VoidCallback onTap;
+  bool loading;
+  CustomButton({Key? key,required this.title,required this.onTap,this.loading = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
+      onTap: loading ? null : onTap,
       child: Container(
         width: double.infinity,
         height: 60,
@@ -21,7 +22,7 @@ class CustomButton extends StatelessWidget {
             color: ColorApp.primaryColor,
           )
         ),
-        child: Center(child: Text(title,style: Theme.of(context).textTheme.titleMedium,)),
+        child: loading ? Center(child: CupertinoActivityIndicator(color: Colors.white,)) : Center(child: Text(title,style: Theme.of(context).textTheme.titleLarge,)),
       ),
     );
   }
