@@ -22,7 +22,7 @@ class CustomButton extends StatelessWidget {
             color: ColorApp.primaryColor,
           )
         ),
-        child: loading ? Center(child: CupertinoActivityIndicator(color: Colors.white,)) : Center(child: Text(title,style: Theme.of(context).textTheme.titleLarge,)),
+        child: loading ? Center(child: CircularProgressIndicator(color: Colors.white,)) : Center(child: Text(title,style: Theme.of(context).textTheme.titleLarge,)),
       ),
     );
   }

@@ -37,4 +37,27 @@ class updataData extends ChangeNotifier{
       setLoading(false);
     }
   }
+
+
+  AddIndustryData(BuildContext context,String name,String phoneNumber,String cnicNumber,String Category,String Description)async{
+   try{
+     setLoading(true);
+     await db.doc(auth!.uid).collection('industryData').add({
+       "Name" : name,
+       "phoneNumber" : phoneNumber,
+       "CNICNumber" : cnicNumber,
+       "Category" : Category,
+       "Description" : Description,
+     }).then((value){
+       setLoading(false);
+       Flashbar().FlutterToast(context, "Your are Eligible");
+     }).onError((error, stackTrace){
+       setLoading(false);
+       Flashbar().FlutterToast(context, error.toString());
+     });
+   }catch(e){
+     setLoading(false);
+     Flashbar().FlutterToast(context, e.toString());
+   }
+  }
 }

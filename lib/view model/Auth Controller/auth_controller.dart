@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_entry_data/view/Dashboard/dashboard_screen.dart';
 import 'package:flutter_entry_data/view/Profile%20Data/profile_data.dart';
 
 import '../../utils/another_flashbar.dart';
@@ -31,6 +32,7 @@ class AuthController extends ChangeNotifier{
           "email" : email,
         }).then((value){
           Flashbar().FlutterToast(context,"Your Data has been added");
+          Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileData()));
         }).onError((error, stackTrace){
           setLoading(false);
           Flashbar().FlutterToast(context,error.toString());
@@ -56,7 +58,7 @@ class AuthController extends ChangeNotifier{
      ).then((value){
        setLoading(false);
        Flashbar().FlutterToast(context, value.toString());
-       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ProfileData()));
+       Navigator.push(context, MaterialPageRoute(builder: (context) => DashBoardPage()));
      }).onError((error, stackTrace){
        setLoading(false);
        Flashbar().FlutterToast(context, error.toString());

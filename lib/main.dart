@@ -1,12 +1,15 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_entry_data/firebase_options.dart';
 import 'package:flutter_entry_data/view/Auth/login_screen.dart';
 
 import 'res/color.dart';
 
 void main()async{
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -24,6 +27,9 @@ class MyApp extends StatelessWidget {
           backgroundColor: ColorApp.primaryColor,
           // color: ColorApp.primaryColor,
           centerTitle: true,
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: ColorApp.primaryColor,
         ),
         textTheme: TextTheme(
           titleLarge: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),
