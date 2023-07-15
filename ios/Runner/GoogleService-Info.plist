@@ -3,23 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>225382796193-h7hdmcta99bsea3hn3fs0987j1cj7dtj.apps.googleusercontent.com</string>
+	<string>1055523964537-9pp324hmvsft2b47sppse0ni1krtj2aq.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.225382796193-h7hdmcta99bsea3hn3fs0987j1cj7dtj</string>
-	<key>ANDROID_CLIENT_ID</key>
-	<string>225382796193-uli326ahg367ovi9fqs5kuk5uu5515gj.apps.googleusercontent.com</string>
+	<string>com.googleusercontent.apps.1055523964537-9pp324hmvsft2b47sppse0ni1krtj2aq</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCJvlRebpr0SOrK12FuYuBUL9uaRDYhYBg</string>
+	<string>AIzaSyAmNM9ZC73y7N3N5uY2akgssDqYaX41srg</string>
 	<key>GCM_SENDER_ID</key>
-	<string>225382796193</string>
+	<string>1055523964537</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.example.flutterEntryData</string>
 	<key>PROJECT_ID</key>
-	<string>mythical-temple-368706</string>
+	<string>flutter-84f63</string>
 	<key>STORAGE_BUCKET</key>
-	<string>mythical-temple-368706.appspot.com</string>
+	<string>flutter-84f63.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:225382796193:ios:628cb456c410f53b5819e0</string>
+	<string>1:1055523964537:ios:b25072619fc3aebf6176a8</string>
 </dict>
 </plist>

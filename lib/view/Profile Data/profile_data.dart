@@ -35,6 +35,7 @@ class _ProfileDataState extends State<ProfileData> {
                 hintText: "Industry Name",
                 border: OutlineInputBorder()
               ),
+              style: Theme.of(context).textTheme.titleSmall,
             ),
             SizedBox(
               height: 10,
@@ -45,6 +46,7 @@ class _ProfileDataState extends State<ProfileData> {
                   hintText: "Location",
                   border: OutlineInputBorder()
               ),
+              style: Theme.of(context).textTheme.titleSmall,
             ),
             SizedBox(
               height: 10,
@@ -56,6 +58,7 @@ class _ProfileDataState extends State<ProfileData> {
                   hintText: "Phone No",
                   border: OutlineInputBorder()
               ),
+              style: Theme.of(context).textTheme.titleSmall,
             ),
             SizedBox(
               height: 10,
@@ -67,6 +70,7 @@ class _ProfileDataState extends State<ProfileData> {
                   hintText: "Registration No",
                   border: OutlineInputBorder()
               ),
+              style: Theme.of(context).textTheme.titleSmall,
             ),
             SizedBox(
               height: 20,
