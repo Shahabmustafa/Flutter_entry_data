@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
           titleSmall: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: Colors.black),
         )
       ),
-      home: auth != null ? LoginScreen() : DashBoardPage(),
+      home: auth != null ?  DashBoardPage() : LoginScreen(),
     );
   }
 }
