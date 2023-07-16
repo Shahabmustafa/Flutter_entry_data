@@ -1,7 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_entry_data/firebase_options.dart';
 import 'package:flutter_entry_data/view/Auth/login_screen.dart';
+import 'package:flutter_entry_data/view/Dashboard/dashboard_screen.dart';
 
 import 'res/color.dart';
 
@@ -10,11 +12,13 @@ void main()async{
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  final auth = FirebaseAuth.instance.currentUser;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +41,7 @@ class MyApp extends StatelessWidget {
           titleSmall: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: Colors.black),
         )
       ),
-      home: LoginScreen(),
+      home: auth != null ? LoginScreen() : DashBoardPage(),
     );
   }
 }

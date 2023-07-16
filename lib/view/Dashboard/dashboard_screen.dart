@@ -41,7 +41,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                           SizedBox(
                             height: 5,
                           ),
-                         ListTile(
+                          ListTile(
                            title: Row(
                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                              children: [
@@ -61,7 +61,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                       ),
                     );
                   }else{
-                    return CircularProgressIndicator();
+                    return Center(child: CircularProgressIndicator());
                   }
                 },
               )
@@ -74,28 +74,57 @@ class _DashBoardPageState extends State<DashBoardPage> {
                     return ListView.builder(
                         itemCount: snapshot.data!.docs.length,
                         itemBuilder: (context,index){
-                          return Card(
-                            child: ListTile(
-                              title: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text('${snapshot.data!.docs[index]['Name']}',style: TextStyle(color: Colors.black),),
-                                  Text('${snapshot.data!.docs[index]['Category']}',style: TextStyle(color: Colors.black),),
-                                ],
-                              ),
-                              subtitle: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text('${snapshot.data!.docs[index]['phoneNumber']}',style: TextStyle(color: Colors.black),),
-                                  Text('${snapshot.data!.docs[index]['CNICNumber']}',style: TextStyle(color: Colors.black),),
-                                ],
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: Card(
+                              child: Container(
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  border: Border.all(
+                                    color: Colors.grey.shade300,
+                                  ),
+                                  color: Colors.grey.shade50,
+                                ),
+                                height: 150,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Text('Date : ${snapshot.data!.docs[index]['time']}',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w400,fontSize: 16),),],
+                                    ),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                      children: [
+                                        Text('${snapshot.data!.docs[index]['Name']}',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 16),),
+                                        Text('${snapshot.data!.docs[index]['Category']}',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 16),),
+
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                      children: [
+                                        Text('${snapshot.data!.docs[index]['phoneNumber']}',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 16),),
+                                        Text('${snapshot.data!.docs[index]['CNICNumber']}',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 16),),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                      children: [
+                                        Text('${snapshot.data!.docs[index]['Description']}',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 16),),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           );
                         }
                     );
                   }else{
-                    return CircularProgressIndicator();
+                    return Center(child: CircularProgressIndicator());
                   }
                 },
               )

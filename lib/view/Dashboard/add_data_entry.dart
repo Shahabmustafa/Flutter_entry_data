@@ -71,7 +71,7 @@ class _EntryPageState extends State<EntryPage> {
               TextFormField(
                 controller: Category,
                 decoration: InputDecoration(
-                    hintText: "Category",
+                    hintText: "Gender",
                     border: OutlineInputBorder()
                 ),
                 style: Theme.of(context).textTheme.titleSmall,

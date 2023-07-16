@@ -4,6 +4,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_entry_data/utils/another_flashbar.dart';
+import 'package:flutter_entry_data/view/Dashboard/dashboard_screen.dart';
+import 'package:flutter_entry_data/view/Profile%20Data/profile_data.dart';
 
 class updataData extends ChangeNotifier{
   bool _loading = false;
@@ -16,6 +18,7 @@ class updataData extends ChangeNotifier{
 
   final db  = FirebaseFirestore.instance.collection("user");
   final auth = FirebaseAuth.instance.currentUser;
+  final time = DateTime.now();
 
   Update(BuildContext context,String industry,String location,String phoneNumber,String registration)async{
     try{
@@ -27,6 +30,7 @@ class updataData extends ChangeNotifier{
         "registration" : registration,
       }).then((value){
         setLoading(false);
+        Navigator.push(context, MaterialPageRoute(builder: (context) => DashBoardPage()));
         Flashbar().FlutterToast(context, "Update has Sucefully");
       }).onError((error, stackTrace){
         Flashbar().FlutterToast(context, error.toString());
@@ -48,6 +52,7 @@ class updataData extends ChangeNotifier{
        "CNICNumber" : cnicNumber,
        "Category" : Category,
        "Description" : Description,
+       "time" : '$time',
      }).then((value){
        setLoading(false);
        Flashbar().FlutterToast(context, "Your are Eligible");
